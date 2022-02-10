@@ -5,9 +5,13 @@ import './App.scss';
 import { 
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 
+import Home from "./views/Home";
+import Cart from "./views/Cart";
+import Shop from "./views/Shop";
 
 function App() {
   const [ menuOpen, setMenuOpen ] = useState(false);
@@ -21,9 +25,9 @@ function App() {
       <aside className={sidebarStyles}>
         Welcome!
         <ul className="navigation">
-          <li><a href="/">Home</a></li>
-          <li><a href="/shop">Shop</a></li>
-          <li><a href="/cart">Cart</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/cart">Cart</Link></li>
         </ul>
       </aside>
       <div className={overlayStyles} onClick={() => setMenuOpen(false)}></div>
@@ -42,14 +46,14 @@ function App() {
     
   );
 }
-const Home = () => (
-  <div>Home</div>
-);
-const Cart = () => (
-  <div>Cart</div>
-);
-const Shop = () => (
-  <div>Shop</div>
-);
+// const Home = () => (
+//   <div>Home</div>
+// );
+// const Cart = () => (
+//   <div>Cart</div>
+// );
+// const Shop = () => (
+//   <div>Shop</div>
+// );
 
 export default App;
